@@ -1,0 +1,83 @@
+@use 'vars';
+nav {
+	top: 0;
+  display: flex;
+  padding: 0 24px;
+	position: sticky;
+  border-bottom: 1px solid var(--very-light-pink);
+  justify-content: space-between;
+	background-color: #fff;
+}
+.menu {
+  display: none;
+}
+
+.nav-logo {
+  width: 100px;
+}
+
+.navbar-left ul,
+.navbar-right ul {
+  margin: 0;
+  height: 60px;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar-left {
+  display: flex;
+}
+.navbar-left ul {
+  margin-left: 12px;
+}
+.navbar-left ul li a,
+.navbar-right ul li a {
+  color: var(--very-light-pink);
+  border: 1px solid var(--white);
+  padding: 8px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+.navbar-left ul li a:hover,
+.navbar-right ul li a:hover {
+  color: var(--hospital-green);
+  border: 1px solid var(--hospital-green);
+}
+
+.navbar-email {
+  color: var(--very-light-pink);
+  font-size: var(--sm);
+}
+
+.navbar-shopping-cart {
+  position: relative;
+}
+.navbar-shopping-cart div {
+  top: -6px;
+  right: -4px;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  position: absolute;
+  font-size: var(--sm);
+  font-weight: bold;
+  align-items: center;
+  border-radius: 50%;
+  justify-content: center;
+  background-color: var(--hospital-green);
+}
+@media (max-width: 640px) {
+  .menu {
+    display: block;
+  }
+
+  .navbar-left ul {
+    display: none;
+  }
+
+  .navbar-email {
+    display: none;
+  }
+}
