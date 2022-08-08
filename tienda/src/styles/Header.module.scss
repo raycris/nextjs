@@ -1,12 +1,13 @@
-@use 'vars';
-nav {
-	top: 0;
+// @use 'vars';
+@import 'vars';
+.Nav {
+  top: 0;
   display: flex;
   padding: 0 24px;
-	position: sticky;
-  border-bottom: 1px solid var(--very-light-pink);
+  position: sticky;
+  border-bottom: 1px solid var($--very-light-pink);
   justify-content: space-between;
-	background-color: #fff;
+  background-color: #fff;
 }
 .menu {
   display: none;
@@ -34,21 +35,21 @@ nav {
 }
 .navbar-left ul li a,
 .navbar-right ul li a {
-  color: var(--very-light-pink);
-  border: 1px solid var(--white);
+  color: var($--very-light-pink);
+  border: 1px solid var($--white);
   padding: 8px;
   border-radius: 8px;
   text-decoration: none;
 }
 .navbar-left ul li a:hover,
 .navbar-right ul li a:hover {
-  color: var(--hospital-green);
-  border: 1px solid var(--hospital-green);
+  color: var($--hospital-green);
+  border: 1px solid var($--hospital-green);
 }
 
 .navbar-email {
-  color: var(--very-light-pink);
-  font-size: var(--sm);
+  color: var($--very-light-pink);
+  font-size: var($--sm);
 }
 
 .navbar-shopping-cart {
@@ -61,12 +62,12 @@ nav {
   height: 16px;
   display: flex;
   position: absolute;
-  font-size: var(--sm);
+  font-size: var($--sm);
   font-weight: bold;
   align-items: center;
   border-radius: 50%;
   justify-content: center;
-  background-color: var(--hospital-green);
+  background-color: var($--hospital-green);
 }
 @media (max-width: 640px) {
   .menu {

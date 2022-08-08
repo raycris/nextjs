@@ -4,9 +4,10 @@ import AppContext from "@context/AppContext";
 
 import OrderItem from "@components/OrderItem";
 
-import "@styles/MyOrder.scss";
 
 import Arrow from "@icons/flechita.svg";
+
+import styles from "@styles/MyOrder.module.scss"
 
 const MyOrder = ({ toggleOrders, setToggleOrders }) => {
   const {
@@ -21,7 +22,7 @@ const MyOrder = ({ toggleOrders, setToggleOrders }) => {
   };
 
   return (
-    <aside className="MyOrder">
+    <aside className={styles.MyOrder}>
       <div
         className="title-container"
         onClick={() => setToggleOrders(!toggleOrders)}

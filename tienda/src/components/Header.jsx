@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import "@styles/Header.scss";
+
 
 import Menu from "@components/Menu";
 
@@ -12,20 +12,20 @@ import ShoppingCart from "@icons/icon_shopping_cart.svg";
 
 import AppContext from "@context/AppContext";
 
+import styles from "@styles/Header.module.scss"
+import Image from "next/image";
+
 const Header = () => {
   const [toggle, setToggle] = useState(false);
   const [toggleOrders, setToggleOrders] = useState(false);
 
-  const {
-    state: { cart },
-  } = useContext(AppContext);
-
+  const { state } = useContext(AppContext);
   return (
-    <nav>
-      <img src={IconMenu} alt="menu" className="menu" />
+    <nav className={styles.Nav}>
+      <Image src={IconMenu} alt="menu" className={styles.menu} />
 
-      <div className="navbar-left">
-        <img src={Logo} alt="logo" className="nav-logo" />
+      <div className={styles["navbar-left"]}>
+        <Image src={Logo} alt="logo" className={styles["nav-logo"]} />
         <ul>
           <li>
             <a href="">All</a>
@@ -48,17 +48,17 @@ const Header = () => {
         </ul>
       </div>
 
-      <div className="navbar-right">
+      <div className={styles["navbar-right"]}>
         <ul>
-          <li className="navbar-email" onClick={() => setToggle(!toggle)}>
+          <li className={styles["navbar-email"]} onClick={() => setToggle(!toggle)}>
             JoeDumas@example.com
           </li>
           <li
-            className="navbar-shopping-cart"
+            className={styles["navbar-shopping-cart"]}
             onClick={() => setToggleOrders(!toggleOrders)}
           >
-            <img src={ShoppingCart} alt="" />
-            {cart.length > 0 ? <div>{cart.length}</div> : null}
+           <Image className={styles["more-clickable-area pointer"]} src={ShoppingCart} alt="shopping cart" />
+							{state?.cart?.length > 0 ? <div>{state?.cart?.length}</div> : null}
           </li>
         </ul>
       </div>
@@ -74,3 +74,5 @@ const Header = () => {
 };
 
 export default Header;
+
+
