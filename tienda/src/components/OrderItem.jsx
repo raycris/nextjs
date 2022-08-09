@@ -1,4 +1,6 @@
 import React, { useContext } from "react";
+import Image from "next/image";
+
 
 import AppContext from "@context/AppContext";
 
@@ -16,11 +18,11 @@ const OrderItem = ({ product }) => {
   return (
     <div className={styles.OrderItem}>
       <figure>
-        <img src={product.category.image} alt={product.title} />
+        <Image src={product?.category.image} alt={product?.title} />
       </figure>
-      <p>{product.title}</p>
-      <p>${product.price}</p>
-      <img src={CloseIcon} alt="close" onClick={() => handleRemove(product)} />
+      <p>{product?.title}</p>
+      <p>${product?.price}</p>
+      <Image src={CloseIcon} alt="close" onClick={() => handleRemove(product)} />
     </div>
   );
 };

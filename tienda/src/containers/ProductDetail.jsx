@@ -1,16 +1,18 @@
 import React from "react";
+import Image from "next/image";
 
-import "@styles/ProductDetail.scss";
 
 import ProductInfo from "@components/ProductInfo";
 
 import CloseIcon from "@icons/icon_close.png";
 
+import styles from "@styles/ProductDetail.module.scss";
+
 const ProductDetail = () => {
   return (
-    <aside className="ProductDetail">
-      <div className="ProductDetail-close">
-        <img src={CloseIcon} alt="close" />
+    <aside className={styles.ProductDetail}>
+      <div className={styles["ProductDetail-close"]}>
+        <Image src={CloseIcon} alt="close" />
       </div>
       <ProductInfo />
     </aside>

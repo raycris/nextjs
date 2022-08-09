@@ -1,13 +1,14 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState } from 'react';
+import Image from 'next/image';
 
-import "@styles/ProductItem.scss";
+import ProductDetail from '@containers/ProductDetail';
 
-import ProductDetail from "@containers/ProductDetail";
+import AppContext from '@context/AppContext';
 
-import AppContext from "@context/AppContext";
+import AddToCartSVG from '@icons/bt_add_to_cart.svg';
+import addedToCartSVG from '@icons/bt_added_to_cart.svg';
 
-import AddToCartSVG from "@icons/bt_add_to_cart.svg";
-import addedToCartSVG from "@icons/bt_added_to_cart.svg";
+import styles from '@styles/ProductItem.module.scss';
 
 const ProductItem = ({ product }) => {
   const { addToCart } = useContext(AppContext);
@@ -34,28 +35,18 @@ const ProductItem = ({ product }) => {
     }
   };
   return (
-    <div className="ProductItem">
-      <img
-        src={product.category.image}
-        alt={product.title}
-        onClick={() => setToggleProduct(!toggleProduct)}
-      />
-      <div className="product-info">
+    <div className={styles.ProductItem}>
+      <Image src={product.category.image} width={240} height={240} alt={product.title} onClick={() => setToggleProduct(!toggleProduct)}  />
+      <div className={styles['product-info']}>
         <div>
           <p>${product.price}</p>
           <p>{product.title}</p>
         </div>
-        <figure onClick={() => handleClick(product)}>
-          <img src={verifyAdded(product)} />
+        <figure className={styles['more-clickable-area']} onClick={() => handleClick(product)}>
+          <Image src={verifyAdded(product)} width={50} height={50} />
         </figure>
       </div>
-      {toggleProduct && (
-        <ProductDetail
-          product={product}
-          setToggleProduct={setToggleProduct}
-          handleClick={handleClick}
-        />
-      )}
+      {toggleProduct && <ProductDetail product={product} setToggleProduct={setToggleProduct} handleClick={handleClick} />}
     </div>
   );
 };
