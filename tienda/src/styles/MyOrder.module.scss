@@ -8,6 +8,7 @@
   bottom: 0px;
   border: 1px solid var($--very-light-pink);
   padding: 24px;
+  z-index: 1;
   position: fixed;
   animation: swipeLeft 0.26s ease;
   box-sizing: border-box;

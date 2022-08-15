@@ -1,5 +1,7 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+
 
 import AppContext from '@context/AppContext';
 
@@ -22,8 +24,8 @@ const MyOrder = ({ toggleOrders, setToggleOrders }) => {
 
   return (
     <aside className={styles.MyOrder}>
-      <div className={styles['title-container']} onClick={() => setToggleOrders(!toggleOrders)}>
-        <img src={Arrow} alt="arrow" />
+      <div className={styles['title-container']} onClick={() => setToggleOrders(!toggleOrders)} onKeyUp role="button" tabIndex={0}>
+        <Image src={Arrow} alt="arrow" />
         <p className={styles.title}>My order</p>
       </div>
 

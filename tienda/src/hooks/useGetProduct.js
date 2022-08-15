@@ -13,7 +13,7 @@ const useGetProducts = (API) => {
       setIsLoading(false);
     }
     fetchData();
-  }, [API]);
+  }, [API, isLoading]);
 
   // return  {products, isLoading};
   return products;

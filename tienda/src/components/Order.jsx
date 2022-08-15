@@ -1,4 +1,6 @@
 import React from "react";
+import Image from "next/image";
+
 
 import "@styles/Order.scss";
 
@@ -12,7 +14,7 @@ const Order = () => {
         <span>6 articles</span>
       </p>
       <p>$560.00</p>
-      <img src={Arrow} alt="arrow" />
+      <Image src={Arrow} alt="arrow" />
     </div>
   );
 };

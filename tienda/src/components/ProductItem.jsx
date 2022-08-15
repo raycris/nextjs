@@ -36,15 +36,18 @@ const ProductItem = ({ product }) => {
   };
   return (
     <div className={styles.ProductItem}>
-      <Image src={product.category.image} width={240} height={240} alt={product.title} onClick={() => setToggleProduct(!toggleProduct)}  />
+      <Image src={product.category.image} width={240} height={240} alt={product.title} onClick={() => setToggleProduct(!toggleProduct)} />
       <div className={styles['product-info']}>
         <div>
           <p>${product.price}</p>
           <p>{product.title}</p>
         </div>
-        <figure className={styles['more-clickable-area']} onClick={() => handleClick(product)}>
-          <Image src={verifyAdded(product)} width={50} height={50} />
-        </figure>
+        <button className={styles['more-clickable-area']} onClick={() => handleClick(product)} >
+          <Image src={verifyAdded(product)} width={50} height={50} alt="image" />
+        </button>
+        {/* <figure className={styles['more-clickable-area']} onClick={() => handleClick(product)} >
+          <Image src={verifyAdded(product)} width={50} height={50} alt="image" />
+        </figure> */}
       </div>
       {toggleProduct && <ProductDetail product={product} setToggleProduct={setToggleProduct} handleClick={handleClick} />}
     </div>

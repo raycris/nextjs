@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useState, useContext } from 'react';
 import Link from 'next/link';
 
@@ -22,42 +23,46 @@ const Header = () => {
   const { state } = useContext(AppContext);
   return (
     <nav className={styles.Nav}>
-      <Image src={IconMenu} alt="menu" className={styles.menu} />
+      <img src={IconMenu} alt="menu" className={styles.menu} />
 
       <div className={styles['navbar-left']}>
-        <Link href="/">
+        <Link href="/" passHref>
           <Image src={Logo} alt="logo" className={styles['nav-logo']} />
         </Link>
         <ul>
           <li>
-            <a href="">All</a>
+            <a href="/">All</a>
           </li>
           <li>
-            <a href="">Clothes</a>
+            <a href="/">Clothes</a>
           </li>
           <li>
-            <a href="">Electronics</a>
+            <a href="/">Electronics</a>
           </li>
           <li>
-            <a href="">Furnitures</a>
+            <a href="/">Furnitures</a>
           </li>
           <li>
-            <a href="">Toys</a>
+            <a href="/">Toys</a>
           </li>
           <li>
-            <a href="">Others</a>
+            <a href="/">Others</a>
           </li>
         </ul>
       </div>
 
       <div className={styles['navbar-right']}>
         <ul>
-          <li className={styles['navbar-email']} onClick={() => setToggle(!toggle)}>
-            JoeDumas@example.com
+          <li>
+            <a className={styles['navbar-email']} onClick={() => setToggle(!toggle)}  href="/#">
+              JoeDumas@example.com
+            </a>
           </li>
-          <li className={styles['navbar-shopping-cart']} onClick={() => setToggleOrders(!toggleOrders)}>
-            <Image className={styles['more-clickable-area pointer']} src={ShoppingCart} alt="shopping cart" />
-            {state?.cart?.length > 0 ? <div>{state?.cart?.length}</div> : null}
+          <li>
+            <a className={styles['navbar-shopping-cart']} onClick={() => setToggleOrders(!toggleOrders)}  href="/#l">
+              <Image className={styles['more-clickable-area pointer']} src={ShoppingCart} alt="shopping cart" />
+              {state?.cart?.length > 0 ? <div>{state?.cart?.length}</div> : null}
+            </a>
           </li>
         </ul>
       </div>

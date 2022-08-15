@@ -7,8 +7,6 @@ const initialState = {
 const useInitialState = () => {
   const [state, setState] = useState(initialState);
   const addToCart = (payload) => {
-    if (state) {
-    }
     setState({
       ...state,
       cart: [...state.cart, payload],

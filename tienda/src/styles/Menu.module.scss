@@ -4,9 +4,10 @@
 .Menu {
   top: 60px;
   right: 50px;
-  width: 100px;
+  width: 170px;
   height: auto;
   border: 1px solid var($--very-light-pink);
+  z-index: 1;
   padding: 20px 20px 0 20px;
   position: absolute;
   border-radius: 6px;
